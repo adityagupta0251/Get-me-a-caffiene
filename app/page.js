@@ -14,32 +14,35 @@ export default function Home() {
     {
       id: "basic",
       title: "Basic Support",
-      description: "At just $5 per month, you secure instant access to our Discord bot and enjoy a complimentary month of our Telegram bot, along with membership in our exclusive early adopters community!",
+      description:
+        "At just $5 per month, you secure instant access to our Discord bot and enjoy a complimentary month of our Telegram bot, along with membership in our exclusive early adopters community!",
       price: "$5/month",
       benefits: [
         "Access to Discord bot",
         "Telegram bot free for 1 month",
         "Early adopters community membership",
-        "Regular platform updates"
+        "Regular platform updates",
       ],
     },
     {
       id: "standard",
       title: "Standard Support",
-      description: "For a six-month period at $7, unlock access to our specialized suite of Discord bots and benefit from full integration with our Telegram solution, keeping you connected and in control at all times!",
+      description:
+        "For a six-month period at $7, unlock access to our specialized suite of Discord bots and benefit from full integration with our Telegram solution, keeping you connected and in control at all times!",
       price: "$7/6 months",
       benefits: [
         "All Basic tier benefits",
         "Multiple specialized Discord bots",
         "Full Telegram bot integration",
         "Extended member benefits",
-        "Early access to new features"
+        "Early access to new features",
       ],
     },
     {
       id: "pro",
       title: "Pro Support",
-      description: "With this tier, gain priority access, auto pre-registration for premium features, exclusive discount coupons, and a complete suite of bot solutions—ensuring rapid support and a fully optimized experience.",
+      description:
+        "With this tier, gain priority access, auto pre-registration for premium features, exclusive discount coupons, and a complete suite of bot solutions—ensuring rapid support and a fully optimized experience.",
       price: "Contact for pricing",
       benefits: [
         "All Standard tier benefits",
@@ -47,7 +50,7 @@ export default function Home() {
         "Auto pre-registration for premium features",
         "Exclusive discount coupons",
         "Complete bot solution suite",
-        "Direct developer communication"
+        "Direct developer communication",
       ],
     },
   ];
@@ -129,7 +132,10 @@ export default function Home() {
           </div>
           <div className="mt-6">
             <p className="text-base text-slate-600 font-light leading-normal">
-              "Supporting NextGendev's innovative Discord bot platform is your chance to be part of the next generation of server management solutions. Our bots streamline image handling and provide complete server automation with a personal touch!"
+              "Supporting NextGendev's innovative Discord bot platform is your
+              chance to be part of the next generation of server management
+              solutions. Our bots streamline image handling and provide complete
+              server automation with a personal touch!"
             </p>
           </div>
         </div>
@@ -153,7 +159,9 @@ export default function Home() {
       <section className="flex-1 overflow-auto px-4 py-6">
         {/* Card Grid Section */}
         <div>
-          <h2 className="text-2xl font-bold text-center mb-8">What We're Building</h2>
+          <h2 className="text-2xl font-bold text-center mb-8">
+            What We're Building
+          </h2>
           <div className="flex flex-wrap justify-center items-stretch gap-6 overflow-x-auto w-full px-4 py-6">
             <div className="flex-shrink-0 w-full sm:w-80 min-h-80 flex flex-col justify-center items-center bg-white shadow-sm border border-slate-200 rounded-lg p-4">
               <div className="p-3 text-center">
@@ -182,7 +190,9 @@ export default function Home() {
                   Discord Bot Suite
                 </h5>
                 <p className="text-slate-600 font-light mb-4 max-w-xs mx-auto">
-                  Our Discord bot manages image uploads and provides a complete server automation solution, designed to streamline your daily digital interactions.
+                  Our Discord bot manages image uploads and provides a complete
+                  server automation solution, designed to streamline your daily
+                  digital interactions.
                 </p>
                 <button className="rounded-md bg-slate-800 py-2 px-4 text-sm text-white hover:bg-slate-700 transition shadow">
                   Learn More
@@ -236,7 +246,9 @@ export default function Home() {
                   Telegram Integration
                 </h5>
                 <p className="text-slate-600 font-light mb-4 max-w-xs mx-auto">
-                  Our platform seamlessly connects Discord and Telegram, providing a unified communication experience across multiple platforms.
+                  Our platform seamlessly connects Discord and Telegram,
+                  providing a unified communication experience across multiple
+                  platforms.
                 </p>
                 <button className="rounded-md bg-slate-800 py-2 px-4 text-sm text-white hover:bg-slate-700 transition shadow">
                   Learn More
@@ -251,7 +263,7 @@ export default function Home() {
           <h2 className="text-2xl font-bold text-center mb-8">Support Tiers</h2>
           <div className="flex flex-wrap justify-center gap-6 px-4">
             {tiers.map((tier) => (
-              <div 
+              <div
                 key={tier.id}
                 className="flex flex-col rounded-lg bg-slate-800 shadow-sm max-w-sm p-8 border border-slate-600"
               >
@@ -290,7 +302,7 @@ export default function Home() {
                   </ul>
                 </div>
                 <div className="mt-12">
-                  <button 
+                  <button
                     onClick={() => handleSubscribe(tier)}
                     className="w-full rounded-md bg-white py-2 px-4 text-sm text-slate-600 transition-all shadow-md hover:shadow-lg hover:bg-white/90 focus:bg-white/90 active:bg-white/90"
                   >
@@ -307,10 +319,10 @@ export default function Home() {
       <section className="p-8 bg-gray-800">
         <div className="mx-auto max-w-screen-md">
           <div className="mb-4 h-64 w-full relative rounded-xl overflow-hidden">
-            <Image 
-              src="/api/placeholder/1200/400" 
-              alt="NextGendev Banner" 
-              layout="fill" 
+            <Image
+              src="/api/placeholder/1200/400"
+              alt="NextGendev Banner"
+              layout="fill"
               objectFit="cover"
               unoptimized
             />
@@ -326,8 +338,8 @@ export default function Home() {
             NextGendev: Innovative Discord Bot Platform
           </Typography>
 
-          <Typography className="font-normal !text-gray-300">
-            <div className="container">
+          <div className="container">
+            <Typography className="font-normal !text-gray-300">
               <p>
                 Welcome to NextGendev, where cutting-edge technology meets
                 community engagement. Our forthcoming Discord bot is designed to
@@ -365,8 +377,8 @@ export default function Home() {
                 contribution helps shape the future of seamless server
                 management and innovative connectivity.
               </p>
-            </div>
-          </Typography>
+            </Typography>
+          </div>
 
           <style jsx>{`
             .container {
@@ -431,7 +443,8 @@ export default function Home() {
               Choose Your Support Tier
             </h2>
             <p className="text-center text-gray-300 mb-6">
-              Select a plan that suits you and help fuel our NextGendev Discord bot development journey.
+              Select a plan that suits you and help fuel our NextGendev Discord
+              bot development journey.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
