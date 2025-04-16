@@ -1,6 +1,6 @@
-// next.config.js
+//next.config.js
 module.exports = {
-  output: 'export',
+  // Do NOT include output: 'export'
   images: {
     remotePatterns: [
       {
@@ -12,3 +12,4 @@ module.exports = {
     ],
   },
 };
+
