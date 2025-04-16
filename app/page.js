@@ -98,7 +98,7 @@ export default function Home() {
         <div className="flex w-full p-4 max-w-lg flex-col rounded-lg bg-white shadow-sm border border-slate-200 my-6">
           <div className="flex items-center gap-4 text-slate-800">
             <img
-              src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80"
+              src="/riya.jpeg"
               alt="NextGendev Developer"
               className="relative inline-block h-14 w-14 rounded-full object-cover object-center"
             />
@@ -320,7 +320,7 @@ export default function Home() {
         <div className="mx-auto max-w-screen-md">
           <div className="mb-4 h-64 w-full relative rounded-xl overflow-hidden">
             <Image
-              src="/api/placeholder/1200/400"
+              src="/banner.jpeg"
               alt="NextGendev Banner"
               layout="fill"
               objectFit="cover"
