@@ -1,8 +1,11 @@
+// components/Navbar.js
 'use client';
+
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
+import { UserButton, SignInButton, SignUpButton, SignedIn, SignedOut } from '@clerk/nextjs';
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -10,9 +13,7 @@ export default function Navbar() {
 
   const links = [
     { href: '/', label: 'Home' },
-    { href: '/about', label: 'About' },
-    { href: '/signup', label: 'Sign Up' },
-    { href: '/login', label: 'Login' }
+    { href: '/about', label: 'About' }
   ];
 
   return (
@@ -22,25 +23,36 @@ export default function Navbar() {
           <Image src="/tea.gif" alt="Tea emoji" width={50} height={50} priority unoptimized />
           <span className="text-2xl font-bold">Get me A Caffeine🧋</span>
         </Link>
-        
+
         {/* Desktop Navigation */}
-        <div className="hidden md:flex space-x-6">
+        <div className="hidden md:flex items-center space-x-6">
           {links.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className={`hover:text-blue-400 transition-all ${
-                pathname === link.href ? 'text-blue-400 font-semibold' : ''
-              }`}
+              className={`hover:text-blue-400 transition-all ${pathname === link.href ? 'text-blue-400 font-semibold' : ''}`}
             >
               {link.label}
             </Link>
           ))}
+
+          <SignedOut>
+            <SignInButton>
+              <button className="hover:text-blue-400 transition-all">Sign In</button>
+            </SignInButton>
+            <SignUpButton>
+              <button className="hover:text-blue-400 transition-all">Sign Up</button>
+            </SignUpButton>
+          </SignedOut>
+
+          <SignedIn>
+            <UserButton afterSignOutUrl="/" />
+          </SignedIn>
         </div>
 
         {/* Mobile Hamburger Icon */}
         <div className="md:hidden">
-          <button 
+          <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="focus:outline-none"
             aria-label="Toggle Menu"
@@ -48,22 +60,12 @@ export default function Navbar() {
             {mobileMenuOpen ? (
               // Close icon
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round" 
-                  strokeWidth={2} 
-                  d="M6 18L18 6M6 6l12 12" 
-                />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
             ) : (
               // Hamburger icon
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round" 
-                  strokeWidth={2} 
-                  d="M4 6h16M4 12h16M4 18h16" 
-                />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
               </svg>
             )}
           </button>
@@ -73,19 +75,30 @@ export default function Navbar() {
       {/* Mobile Menu */}
       {mobileMenuOpen && (
         <div className="md:hidden mt-2">
-          <div className="flex flex-col space-y-2">
+          <div className="flex flex-col space-y-2 px-4">
             {links.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className={`block px-4 py-2 text-lg hover:text-blue-400 transition-all ${
-                  pathname === link.href ? 'text-blue-400 font-semibold' : ''
-                }`}
+                className={`block py-2 text-lg hover:text-blue-400 transition-all ${pathname === link.href ? 'text-blue-400 font-semibold' : ''}`}
               >
                 {link.label}
               </Link>
             ))}
+
+            <SignedOut>
+              <SignInButton>
+                <button className="text-left py-2 hover:text-blue-400">Sign In</button>
+              </SignInButton>
+              <SignUpButton>
+                <button className="text-left py-2 hover:text-blue-400">Sign Up</button>
+              </SignUpButton>
+            </SignedOut>
+
+            <SignedIn>
+              <UserButton afterSignOutUrl="/" />
+            </SignedIn>
           </div>
         </div>
       )}
