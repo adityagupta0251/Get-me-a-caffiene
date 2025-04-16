@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 4040",
     "build:css": "tailwindcss -i ./app/globals.css -o ./public/tailwind.css --minify",
     "build": "npm run build:css && next build",
     "start": "next start",
@@ -22,6 +22,7 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@next/bundle-analyzer": "^15.3.0",
     "@tailwindcss/cli": "^4.1.4",
     "@tailwindcss/postcss": "^4.1.4",
     "autoprefixer": "^10.4.21",
