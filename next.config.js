@@ -1,6 +1,14 @@
 // next.config.js
 module.exports = {
+  output: 'export',
   images: {
-    domains: ['www.material-tailwind.com'], // Add the domain here
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'www.material-tailwind.com',
+        port: '',
+        pathname: '/**',
+      },
+    ],
   },
-}
+};
