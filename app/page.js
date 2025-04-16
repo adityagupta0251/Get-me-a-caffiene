@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import React, { useState } from "react";
 import Image from "next/image";
@@ -584,57 +584,13 @@ export default function Home() {
             </div>
           </div>
         </div>
-
-        {/* Support Tiers Section */}
-        <div className="mb-12">
-          <h2 className="text-xl md:text-2xl font-bold mb-6">
-            Choose Your Support Tier
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {tiers.map((tier) => (
-              <div
-                key={tier.id}
-                className="group cursor-pointer overflow-hidden rounded-lg shadow-lg bg-gray-800 hover:bg-gray-700 transition-colors flex flex-col"
-              >
-                <div className="p-6 flex flex-col flex-grow">
-                  <h3 className="text-white text-xl font-semibold mb-2">
-                    {tier.title}
-                  </h3>
-                  <p className="text-gray-300 mb-4 text-sm md:text-base">
-                    {tier.description}
-                  </p>
-                  <p className="text-blue-400 font-bold mb-4 text-sm md:text-base">
-                    {tier.price}
-                  </p>
-                  <ul className="mb-4 space-y-1 list-disc list-inside text-sm md:text-base">
-                    {tier.benefits.map((benefit, idx) => (
-                      <li key={idx}>{benefit}</li>
-                    ))}
-                  </ul>
-                  <button
-                    onClick={() => handleSubscribe(tier)}
-                    className="mt-auto gradient-btn w-full"
-                  >
-                    <span className="btn-inner">Subscribe</span>
-                  </button>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
       </section>
 
       {/* Content Section 16 as Footer */}
       <section className="p-8 bg-gray-800">
         <div className="mx-auto max-w-screen-md">
           <div className="mb-4 h-[28rem] w-full relative rounded-xl overflow-hidden">
-            <Image
-              src="https://www.material-tailwind.com/img/content2.jpg"
-              alt="team work"
-              fill
-              className="object-cover"
-              priority
-            />
+            <img src="banner.jpeg"    />
           </div>
           <Typography variant="small" className="font-medium !text-blue-500">
             #blog #post
@@ -649,24 +605,26 @@ export default function Home() {
           <Typography className="font-normal !text-gray-500">
             This is the paragraph where you can write more details about your
             product. Keep your user engaged by providing meaningful information.
-            Remember that by this time, the user is curious, otherwise they wouldn&apos;t
-            scroll to get here. Add a button if you want the user to see more. We
-            are here to make life better.
-            <br /><br />
+            Remember that by this time, the user is curious, otherwise they
+            wouldn&apos;t scroll to get here. Add a button if you want the user
+            to see more. We are here to make life better.
+            <br />
+            <br />
             And now I look and look around and there's so many Kanyes I've been
             trying to figure out the bed design for the master bedroom at our
             Hidden Hills compound... and thank you for turning my personal jean
             jacket into a couture piece.
-            <br /><br />
-            Thank you Anna for the invite, thank you to the whole Vogue team. And I
-            love you like Kanye loves Kanye. Panda Panda Panda. I've been trying to
-            figure out the bed design for the master bedroom at our Hidden Hills
-            compound...The Pablo pop-up was almost a pop-up of influence. All
-            respect, prayers, and love to Phife's family. Thank you for so much
-            inspiration. I love this new Ferg album! The Life of Pablo is
-            now available for purchase. I have a dream. Thank you to everybody who
-            made The Life of Pablo the number 1 album in the world! I'm so proud
-            of the number #1 song in the country. Panda!
+            <br />
+            <br />
+            Thank you Anna for the invite, thank you to the whole Vogue team.
+            And I love you like Kanye loves Kanye. Panda Panda Panda. I've been
+            trying to figure out the bed design for the master bedroom at our
+            Hidden Hills compound...The Pablo pop-up was almost a pop-up of
+            influence. All respect, prayers, and love to Phife's family. Thank
+            you for so much inspiration. I love this new Ferg album! The Life of
+            Pablo is now available for purchase. I have a dream. Thank you to
+            everybody who made The Life of Pablo the number 1 album in the
+            world! I'm so proud of the number #1 song in the country. Panda!
           </Typography>
         </div>
       </section>
