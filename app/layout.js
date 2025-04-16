@@ -1,5 +1,5 @@
-import { Inter } from 'next/font/google';
-import { Geist, Geist_Mono } from 'next/font/google';
+import { Inter } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import {
   ClerkProvider,
   SignInButton,
@@ -7,33 +7,33 @@ import {
   SignedIn,
   SignedOut,
   UserButton,
-} from '@clerk/nextjs';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
-import './globals.css';
+} from "@clerk/nextjs";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import "./globals.css";
 
 // Font imports
 const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
 });
 
 const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
 });
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: 'Get me A Caffeine🧋',
-  description: 'A platform for funding me a caffeine',
+  title: "Get me A Caffeine🧋",
+  description: "A platform for funding me a caffeine",
   icons: {
     icon: [
-      { url: '/favicon.ico' },
-      { url: '/favicon2.svg', type: 'image/svg+xml' },
+      { url: "/favicon.ico" },
+      { url: "/favicon2.svg", type: "image/svg+xml" },
     ],
-    apple: [{ url: '/favicon2.svg' }],
+    apple: [{ url: "/favicon2.svg" }],
   },
 };
 
@@ -50,12 +50,9 @@ export default function RootLayout({ children }) {
           <link rel="alternate icon" href="/favicon.ico" type="image/x-icon" />
         </head>
 
-        <body className={`${inter.className} antialiased bg-gray-950 text-white`}>
-          {/* Header with authentication buttons */}
-          <header className="flex justify-end items-center p-4 gap-4 h-16">
-   
-          </header>
-
+        <body
+          className={`${inter.className} antialiased bg-gray-950 text-white`}
+        >
           {/* Main Content Area */}
           <div className="min-h-screen flex flex-col">
             <Navbar />
