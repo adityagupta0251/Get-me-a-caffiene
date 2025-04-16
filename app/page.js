@@ -338,8 +338,8 @@ export default function Home() {
             NextGendev: Innovative Discord Bot Platform
           </Typography>
 
-          <div className="container">
-            <Typography className="font-normal !text-gray-300">
+          <div className="container font-normal !text-gray-300">
+            <Typography>
               <p>
                 Welcome to NextGendev, where cutting-edge technology meets
                 community engagement. Our forthcoming Discord bot is designed to

@@ -10,7 +10,10 @@ import {
 } from "@clerk/nextjs";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import feature from "./feature/page";
 import "./globals.css";
+
+
 
 // Font imports
 const geistSans = Geist({
