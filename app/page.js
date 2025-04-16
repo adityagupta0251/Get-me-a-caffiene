@@ -9,31 +9,46 @@ export default function Home() {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [selectedTier, setSelectedTier] = useState(null);
 
+  // Consistent pricing tiers information
   const tiers = [
     {
       id: "basic",
       title: "Basic Support",
-      description: "Show your appreciation with a small caffeine boost!",
-      price: "$2/month",
-      benefits: ["Exclusive updates", "Access to basic content"],
-    },
-    {
-      id: "premium",
-      title: "Premium Support",
-      description: "Keep the energy flowing with a larger contribution!",
+      description: "At just $5 per month, you secure instant access to our Discord bot and enjoy a complimentary month of our Telegram bot, along with membership in our exclusive early adopters community!",
       price: "$5/month",
       benefits: [
-        "Everything in Basic",
-        "Early access to new features",
-        "Exclusive behind-the-scenes content",
+        "Access to Discord bot",
+        "Telegram bot free for 1 month",
+        "Early adopters community membership",
+        "Regular platform updates"
       ],
     },
     {
-      id: "custom",
-      title: "Custom Support",
-      description: "Want to support in your own way? Let's chat!",
-      price: "Varies",
-      benefits: ["Custom perks tailored to you", "Direct communication"],
+      id: "standard",
+      title: "Standard Support",
+      description: "For a six-month period at $7, unlock access to our specialized suite of Discord bots and benefit from full integration with our Telegram solution, keeping you connected and in control at all times!",
+      price: "$7/6 months",
+      benefits: [
+        "All Basic tier benefits",
+        "Multiple specialized Discord bots",
+        "Full Telegram bot integration",
+        "Extended member benefits",
+        "Early access to new features"
+      ],
+    },
+    {
+      id: "pro",
+      title: "Pro Support",
+      description: "With this tier, gain priority access, auto pre-registration for premium features, exclusive discount coupons, and a complete suite of bot solutions—ensuring rapid support and a fully optimized experience.",
+      price: "Contact for pricing",
+      benefits: [
+        "All Standard tier benefits",
+        "Priority access and support",
+        "Auto pre-registration for premium features",
+        "Exclusive discount coupons",
+        "Complete bot solution suite",
+        "Direct developer communication"
+      ],
     },
   ];
 
@@ -81,13 +96,13 @@ export default function Home() {
           <div className="flex items-center gap-4 text-slate-800">
             <img
               src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80"
-              alt="Tania Andrew"
-              className="relative inline-block h-[58px] w-[58px] rounded-full object-cover object-center"
+              alt="NextGendev Developer"
+              className="relative inline-block h-14 w-14 rounded-full object-cover object-center"
             />
             <div className="flex w-full flex-col">
               <div className="flex items-center justify-between">
                 <h5 className="text-xl font-semibold text-slate-800">
-                  Tania Andrew
+                  NextGendev Team
                 </h5>
                 <div className="flex items-center gap-0.5">
                   {[...Array(5)].map((_, i) => (
@@ -108,15 +123,13 @@ export default function Home() {
                 </div>
               </div>
               <p className="text-xs uppercase font-bold text-slate-500 mt-0.5">
-                Designer @ Google
+                Discord Bot Developers
               </p>
             </div>
           </div>
           <div className="mt-6">
             <p className="text-base text-slate-600 font-light leading-normal">
-              &quot;I found solution to all my design needs from Creative Tim. I
-              use them as a freelancer in my hobby projects for fun! And its
-              really affordable, very humble guys !!!&quot;
+              "Supporting NextGendev's innovative Discord bot platform is your chance to be part of the next generation of server management solutions. Our bots streamline image handling and provide complete server automation with a personal touch!"
             </p>
           </div>
         </div>
@@ -140,8 +153,9 @@ export default function Home() {
       <section className="flex-1 overflow-auto px-4 py-6">
         {/* Card Grid Section */}
         <div>
+          <h2 className="text-2xl font-bold text-center mb-8">What We're Building</h2>
           <div className="flex flex-wrap justify-center items-stretch gap-6 overflow-x-auto w-full px-4 py-6">
-            <div className="flex-shrink-0 w-full sm:w-[22rem] min-h-80 flex flex-col justify-center items-center bg-white shadow-sm border border-slate-200 rounded-lg p-4">
+            <div className="flex-shrink-0 w-full sm:w-80 min-h-80 flex flex-col justify-center items-center bg-white shadow-sm border border-slate-200 rounded-lg p-4">
               <div className="p-3 text-center">
                 <div className="flex justify-center mb-4">
                   <svg
@@ -165,38 +179,37 @@ export default function Home() {
                   </svg>
                 </div>
                 <h5 className="text-slate-800 text-2xl font-semibold mb-2">
-                  Lit Ideas for Startups
+                  Discord Bot Suite
                 </h5>
                 <p className="text-slate-600 font-light mb-4 max-w-xs mx-auto">
-                  Because it's about motivating the doers. Because I'm here to
-                  follow my dreams and inspire others.
+                  Our Discord bot manages image uploads and provides a complete server automation solution, designed to streamline your daily digital interactions.
                 </p>
                 <button className="rounded-md bg-slate-800 py-2 px-4 text-sm text-white hover:bg-slate-700 transition shadow">
-                  View More
+                  Learn More
                 </button>
               </div>
             </div>
 
-            <div className="flex-shrink-0 w-full sm:w-[22rem] relative grid h-[35rem] flex-col items-end justify-center overflow-hidden rounded-lg bg-white shadow-sm">
+            <div className="flex-shrink-0 w-full sm:w-80 relative grid h-96 flex-col items-end justify-center overflow-hidden rounded-lg bg-white shadow-sm">
               <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1552960562-daf630e9278b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80')] bg-cover bg-center">
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50"></div>
               </div>
               <div className="relative text-center p-6 px-6 py-14 md:px-12">
                 <h2 className="mb-6 text-3xl font-medium text-white">
-                  How we design and code open-source projects?
+                  Join Our Growing Community
                 </h2>
                 <h5 className="mb-4 text-xl font-semibold text-slate-300">
-                  Lewis Daniel
+                  NextGendev
                 </h5>
                 <img
-                  alt="Lewis Daniel"
+                  alt="NextGendev Logo"
                   src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80"
                   className="inline-block h-32 w-32 rounded-full border-4 border-white"
                 />
               </div>
             </div>
 
-            <div className="flex-shrink-0 w-full sm:w-[22rem] min-h-80 flex flex-col justify-center items-center bg-white shadow-sm border border-slate-200 rounded-lg p-4">
+            <div className="flex-shrink-0 w-full sm:w-80 min-h-80 flex flex-col justify-center items-center bg-white shadow-sm border border-slate-200 rounded-lg p-4">
               <div className="p-3 text-center">
                 <div className="flex justify-center mb-4">
                   <svg
@@ -220,412 +233,165 @@ export default function Home() {
                   </svg>
                 </div>
                 <h5 className="text-slate-800 text-2xl font-semibold mb-2">
-                  Lit Ideas for Startups
+                  Telegram Integration
                 </h5>
                 <p className="text-slate-600 font-light mb-4 max-w-xs mx-auto">
-                  Because it's about motivating the doers. Because I'm here to
-                  follow my dreams and inspire others.
+                  Our platform seamlessly connects Discord and Telegram, providing a unified communication experience across multiple platforms.
                 </p>
                 <button className="rounded-md bg-slate-800 py-2 px-4 text-sm text-white hover:bg-slate-700 transition shadow">
-                  View More
+                  Learn More
                 </button>
               </div>
             </div>
           </div>
         </div>
 
-        {/* GitHub Sponsor Section */}
-        <div className="flex flex-wrap justify-center gap-6 px-4 py-8">
-          <div className="flex flex-col rounded-lg bg-slate-800 shadow-sm max-w-96 p-8 border border-slate-600">
-            <div className="pb-8 mb-8 text-center text-slate-100 border-b border-slate-600">
-              <p className="text-sm uppercase font-semibold text-slate-300">
-                standard
-              </p>
-              <h1 className="flex justify-center gap-1 mt-4 font-bold text-white text-6xl">
-                <span className="text-3xl">$</span>29
-                <span className="self-end text-3xl">/mo</span>
-              </h1>
-            </div>
-            <div>
-              <ul className="flex flex-col gap-4">
-                <li className="flex items-center gap-4">
-                  <span className="p-1 border rounded-full border-slate-500 bg-slate-700">
-                    <svg
-                      className="w-4 h-4 text-slate-300"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth="2"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M4.5 12.75l6 6 9-13.5"
-                      />
-                    </svg>
-                  </span>
-                  <p className="text-slate-300">5 team members</p>
-                </li>
-                <li className="flex items-center gap-4">
-                  <span className="p-1 border rounded-full border-slate-500 bg-slate-700">
-                    <svg
-                      className="w-4 h-4 text-slate-300"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth="2"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M4.5 12.75l6 6 9-13.5"
-                      />
-                    </svg>
-                  </span>
-                  <p className="text-slate-300">200+ components</p>
-                </li>
-                <li className="flex items-center gap-4">
-                  <span className="p-1 border rounded-full border-slate-500 bg-slate-700">
-                    <svg
-                      className="w-4 h-4 text-slate-300"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth="2"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M4.5 12.75l6 6 9-13.5"
-                      />
-                    </svg>
-                  </span>
-                  <p className="text-slate-300">40+ built-in pages</p>
-                </li>
-                <li className="flex items-center gap-4">
-                  <span className="p-1 border rounded-full border-slate-500 bg-slate-700">
-                    <svg
-                      className="w-4 h-4 text-slate-300"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth="2"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M4.5 12.75l6 6 9-13.5"
-                      />
-                    </svg>
-                  </span>
-                  <p className="text-slate-300">1 year free updates</p>
-                </li>
-                <li className="flex items-center gap-4">
-                  <span className="p-1 border rounded-full border-slate-500 bg-slate-700">
-                    <svg
-                      className="w-4 h-4 text-slate-300"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth="2"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M4.5 12.75l6 6 9-13.5"
-                      />
-                    </svg>
-                  </span>
-                  <p className="text-slate-300">Lifetime technical support</p>
-                </li>
-              </ul>
-            </div>
-            <div className="mt-12">
-              <button className="w-full rounded-md bg-white py-2 px-4 text-sm text-slate-600 transition-all shadow-md hover:shadow-lg hover:bg-white/90 focus:bg-white/90 active:bg-white/90">
-                Buy Now
-              </button>
-            </div>
-          </div>
-
-          <div className="flex flex-col rounded-lg bg-slate-800 shadow-sm max-w-96 p-8 border border-slate-600">
-            <div className="pb-8 mb-8 text-center text-slate-100 border-b border-slate-600">
-              <p className="text-sm uppercase font-semibold text-slate-300">
-                standard
-              </p>
-              <h1 className="flex justify-center gap-1 mt-4 font-bold text-white text-6xl">
-                <span className="text-3xl">$</span>29
-                <span className="self-end text-3xl">/mo</span>
-              </h1>
-            </div>
-            <div>
-              <ul className="flex flex-col gap-4">
-                <li className="flex items-center gap-4">
-                  <span className="p-1 border rounded-full border-slate-500 bg-slate-700">
-                    <svg
-                      className="w-4 h-4 text-slate-300"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth="2"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M4.5 12.75l6 6 9-13.5"
-                      />
-                    </svg>
-                  </span>
-                  <p className="text-slate-300">5 team members</p>
-                </li>
-                <li className="flex items-center gap-4">
-                  <span className="p-1 border rounded-full border-slate-500 bg-slate-700">
-                    <svg
-                      className="w-4 h-4 text-slate-300"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth="2"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M4.5 12.75l6 6 9-13.5"
-                      />
-                    </svg>
-                  </span>
-                  <p className="text-slate-300">200+ components</p>
-                </li>
-                <li className="flex items-center gap-4">
-                  <span className="p-1 border rounded-full border-slate-500 bg-slate-700">
-                    <svg
-                      className="w-4 h-4 text-slate-300"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth="2"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M4.5 12.75l6 6 9-13.5"
-                      />
-                    </svg>
-                  </span>
-                  <p className="text-slate-300">40+ built-in pages</p>
-                </li>
-                <li className="flex items-center gap-4">
-                  <span className="p-1 border rounded-full border-slate-500 bg-slate-700">
-                    <svg
-                      className="w-4 h-4 text-slate-300"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth="2"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M4.5 12.75l6 6 9-13.5"
-                      />
-                    </svg>
-                  </span>
-                  <p className="text-slate-300">1 year free updates</p>
-                </li>
-                <li className="flex items-center gap-4">
-                  <span className="p-1 border rounded-full border-slate-500 bg-slate-700">
-                    <svg
-                      className="w-4 h-4 text-slate-300"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth="2"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M4.5 12.75l6 6 9-13.5"
-                      />
-                    </svg>
-                  </span>
-                  <p className="text-slate-300">Lifetime technical support</p>
-                </li>
-              </ul>
-            </div>
-            <div className="mt-12">
-              <button className="w-full rounded-md bg-white py-2 px-4 text-sm text-slate-600 transition-all shadow-md hover:shadow-lg hover:bg-white/90 focus:bg-white/90 active:bg-white/90">
-                Buy Now
-              </button>
-            </div>
-          </div>
-
-          <div className="flex flex-col rounded-lg bg-slate-800 shadow-sm max-w-96 p-8 border border-slate-600">
-            <div className="pb-8 mb-8 text-center text-slate-100 border-b border-slate-600">
-              <p className="text-sm uppercase font-semibold text-slate-300">
-                standard
-              </p>
-              <h1 className="flex justify-center gap-1 mt-4 font-bold text-white text-6xl">
-                <span className="text-3xl">$</span>29
-                <span className="self-end text-3xl">/mo</span>
-              </h1>
-            </div>
-            <div>
-              <ul className="flex flex-col gap-4">
-                <li className="flex items-center gap-4">
-                  <span className="p-1 border rounded-full border-slate-500 bg-slate-700">
-                    <svg
-                      className="w-4 h-4 text-slate-300"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth="2"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M4.5 12.75l6 6 9-13.5"
-                      />
-                    </svg>
-                  </span>
-                  <p className="text-slate-300">5 team members</p>
-                </li>
-                <li className="flex items-center gap-4">
-                  <span className="p-1 border rounded-full border-slate-500 bg-slate-700">
-                    <svg
-                      className="w-4 h-4 text-slate-300"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth="2"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M4.5 12.75l6 6 9-13.5"
-                      />
-                    </svg>
-                  </span>
-                  <p className="text-slate-300">200+ components</p>
-                </li>
-                <li className="flex items-center gap-4">
-                  <span className="p-1 border rounded-full border-slate-500 bg-slate-700">
-                    <svg
-                      className="w-4 h-4 text-slate-300"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth="2"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M4.5 12.75l6 6 9-13.5"
-                      />
-                    </svg>
-                  </span>
-                  <p className="text-slate-300">40+ built-in pages</p>
-                </li>
-                <li className="flex items-center gap-4">
-                  <span className="p-1 border rounded-full border-slate-500 bg-slate-700">
-                    <svg
-                      className="w-4 h-4 text-slate-300"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth="2"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M4.5 12.75l6 6 9-13.5"
-                      />
-                    </svg>
-                  </span>
-                  <p className="text-slate-300">1 year free updates</p>
-                </li>
-                <li className="flex items-center gap-4">
-                  <span className="p-1 border rounded-full border-slate-500 bg-slate-700">
-                    <svg
-                      className="w-4 h-4 text-slate-300"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth="2"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M4.5 12.75l6 6 9-13.5"
-                      />
-                    </svg>
-                  </span>
-                  <p className="text-slate-300">Lifetime technical support</p>
-                </li>
-              </ul>
-            </div>
-            <div className="mt-12">
-              <button className="w-full rounded-md bg-white py-2 px-4 text-sm text-slate-600 transition-all shadow-md hover:shadow-lg hover:bg-white/90 focus:bg-white/90 active:bg-white/90">
-                Buy Now
-              </button>
-            </div>
+        {/* Support Tier Section */}
+        <div className="py-12">
+          <h2 className="text-2xl font-bold text-center mb-8">Support Tiers</h2>
+          <div className="flex flex-wrap justify-center gap-6 px-4">
+            {tiers.map((tier) => (
+              <div 
+                key={tier.id}
+                className="flex flex-col rounded-lg bg-slate-800 shadow-sm max-w-sm p-8 border border-slate-600"
+              >
+                <div className="pb-8 mb-8 text-center text-slate-100 border-b border-slate-600">
+                  <p className="text-sm uppercase font-semibold text-slate-300">
+                    {tier.title}
+                  </p>
+                  <h1 className="flex justify-center gap-1 mt-4 font-bold text-white text-4xl">
+                    {tier.price}
+                  </h1>
+                </div>
+                <div>
+                  <p className="text-slate-300 mb-6">{tier.description}</p>
+                  <ul className="flex flex-col gap-4">
+                    {tier.benefits.map((benefit, idx) => (
+                      <li key={idx} className="flex items-center gap-4">
+                        <span className="p-1 border rounded-full border-slate-500 bg-slate-700">
+                          <svg
+                            className="w-4 h-4 text-slate-300"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            strokeWidth="2"
+                            stroke="currentColor"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              d="M4.5 12.75l6 6 9-13.5"
+                            />
+                          </svg>
+                        </span>
+                        <p className="text-slate-300">{benefit}</p>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="mt-12">
+                  <button 
+                    onClick={() => handleSubscribe(tier)}
+                    className="w-full rounded-md bg-white py-2 px-4 text-sm text-slate-600 transition-all shadow-md hover:shadow-lg hover:bg-white/90 focus:bg-white/90 active:bg-white/90"
+                  >
+                    Subscribe Now
+                  </button>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Content Section 16 as Footer */}
+      {/* Content Section as Footer */}
       <section className="p-8 bg-gray-800">
         <div className="mx-auto max-w-screen-md">
-          <div className="mb-4 h-[28rem] w-full relative rounded-xl overflow-hidden">
-            <img src="banner.jpeg"    />
+          <div className="mb-4 h-64 w-full relative rounded-xl overflow-hidden">
+            <Image 
+              src="/api/placeholder/1200/400" 
+              alt="NextGendev Banner" 
+              layout="fill" 
+              objectFit="cover"
+              unoptimized
+            />
           </div>
           <Typography variant="small" className="font-medium !text-blue-500">
-            #blog #post
+            #discord #nextgendev #bots
           </Typography>
           <Typography
             variant="h2"
             color="blue-gray"
-            className="my-4 font-black text-4xl !leading-snug"
+            className="my-4 font-black text-4xl !leading-snug text-white"
           >
-            The Castle Looks Different at Night...
+            NextGendev: Innovative Discord Bot Platform
           </Typography>
-          <Typography className="font-normal !text-gray-500">
-            This is the paragraph where you can write more details about your
-            product. Keep your user engaged by providing meaningful information.
-            Remember that by this time, the user is curious, otherwise they
-            wouldn&apos;t scroll to get here. Add a button if you want the user
-            to see more. We are here to make life better.
-            <br />
-            <br />
-            And now I look and look around and there's so many Kanyes I've been
-            trying to figure out the bed design for the master bedroom at our
-            Hidden Hills compound... and thank you for turning my personal jean
-            jacket into a couture piece.
-            <br />
-            <br />
-            Thank you Anna for the invite, thank you to the whole Vogue team.
-            And I love you like Kanye loves Kanye. Panda Panda Panda. I've been
-            trying to figure out the bed design for the master bedroom at our
-            Hidden Hills compound...The Pablo pop-up was almost a pop-up of
-            influence. All respect, prayers, and love to Phife's family. Thank
-            you for so much inspiration. I love this new Ferg album! The Life of
-            Pablo is now available for purchase. I have a dream. Thank you to
-            everybody who made The Life of Pablo the number 1 album in the
-            world! I'm so proud of the number #1 song in the country. Panda!
+
+          <Typography className="font-normal !text-gray-300">
+            <div className="container">
+              <p>
+                Welcome to NextGendev, where cutting-edge technology meets
+                community engagement. Our forthcoming Discord bot is designed to
+                manage image uploads and deliver a complete, automated server
+                solution—crafted to streamline your daily digital interactions
+                while keeping the human element alive.
+              </p>
+              <p>
+                As we embark on this innovative venture, we invite you to become
+                an integral part of our evolution. By funding our project, you
+                not only receive a complimentary one-month trial of our Discord
+                bot but also gain exclusive access to our evolving community and
+                platform.
+              </p>
+              <p>
+                <strong>Basic Support:</strong> At just <em>$5 per month</em>,
+                you secure instant access to our Discord bot and enjoy a
+                complimentary month of our Telegram bot, along with membership
+                in our exclusive early adopters community.
+              </p>
+              <p>
+                <strong>Standard Support:</strong> For a six-month period at{" "}
+                <em>$7</em>, unlock access to our specialized suite of Discord
+                bots and benefit from full integration with our Telegram
+                solution, keeping you connected and in control at all times.
+              </p>
+              <p>
+                <strong>Pro Support:</strong> With this tier, gain priority
+                access, auto pre-registration for premium features, exclusive
+                discount coupons, and a complete suite of bot solutions—ensuring
+                rapid support and a fully optimized experience.
+              </p>
+              <p>
+                Join us at NextGendev on this exciting journey, where every
+                contribution helps shape the future of seamless server
+                management and innovative connectivity.
+              </p>
+            </div>
           </Typography>
+
+          <style jsx>{`
+            .container {
+              max-width: 800px;
+              margin: 40px auto;
+              padding: 30px;
+              background: rgba(0, 30, 60, 0.6);
+              border-radius: 10px;
+              box-shadow: 0 0 20px rgba(0, 0, 80, 0.7);
+              font-family: "Courier New", Courier, monospace;
+              color: #ffffff;
+              line-height: 1.6;
+            }
+            p {
+              margin: 15px 0;
+              text-align: justify;
+              font-size: 16px;
+            }
+            strong {
+              color: #66b3ff;
+            }
+            em {
+              color: #ffd700;
+            }
+          `}</style>
         </div>
       </section>
 
@@ -665,8 +431,7 @@ export default function Home() {
               Choose Your Support Tier
             </h2>
             <p className="text-center text-gray-300 mb-6">
-              Select a plan that suits you and help fuel our development
-              journey.
+              Select a plan that suits you and help fuel our NextGendev Discord bot development journey.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
