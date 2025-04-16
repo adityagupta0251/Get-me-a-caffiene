@@ -29,7 +29,7 @@ export default function Home() {
       title: "Standard Support",
       description:
         "For a six-month period at $7, unlock access to our specialized suite of Discord bots and benefit from full integration with our Telegram solution, keeping you connected and in control at all times!",
-      price: "$7/6 months",
+      price: "$7 per 6 months",
       benefits: [
         "All Basic tier benefits",
         "Multiple specialized Discord bots",
