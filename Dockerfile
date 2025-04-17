@@ -1,33 +1,26 @@
-# 1. Use official Node.js base image for building
-FROM node:18-alpine AS builder
-
-# 2. Set working directory
-WORKDIR /app
-
-# 3. Copy package files and install dependencies
-COPY package*.json ./
-RUN npm install
-
-# 4. Copy all project files and build the app (including Tailwind CSS and Next.js static export)
-COPY . . 
-RUN npm run build
-RUN npm run export
-
-# 5. Prepare the production environment
+# Use official Node.js 18 Alpine image
 FROM node:18-alpine
 
-# 6. Set working directory for the final stage
+# Set working directory
 WORKDIR /app
 
-# 7. Copy only the necessary files from the builder image
-COPY --from=builder /app/package*.json ./
-COPY --from=builder /app/out ./out
+# Copy package.json and lock file
+COPY package*.json ./
 
-# 8. Install serve globally for serving static files
-RUN npm install -g serve
+# Install dependencies
+RUN npm install
 
-# 9. Expose the desired port (4040)
-EXPOSE 4040
+# Copy the rest of the application files
+COPY . .
 
-# 10. Command to run the app
-CMD ["serve", "-s", "out", "-l", "4040"]
+# Build Next.js app (build for production)
+RUN npm run build
+
+# If you're doing static export (next export), uncomment this:
+# RUN npm run export
+
+# Expose the port the app runs on (default for Next.js is 3000)
+EXPOSE 3000
+
+# Start the app in production mode (serve the built static files if using export)
+CMD ["npm", "start"]
