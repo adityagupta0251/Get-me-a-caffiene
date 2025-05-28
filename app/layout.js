@@ -29,8 +29,8 @@ const geistMono = Geist_Mono({
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Get me A Caffeine🧋",
-  description: "A platform for funding me a caffeine",
+  title: "Be a NextGenie..",
+  description: "A platform for learning & collaboration",
   icons: {
     icon: [
       { url: "/favicon.ico" },
