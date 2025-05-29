@@ -6,6 +6,7 @@ import { usePathname, useRouter } from "next/navigation";
 import Image from "next/image";
 import { SignInButton, SignedIn, SignedOut, UserButton, useUser } from "@clerk/nextjs";
 import NavItems from "@/components/NavItems";
+import {cn} from "@/lib/utils";
 
 const Navbar = () => {
     const pathname = usePathname();
@@ -154,7 +155,6 @@ const Navbar = () => {
                                     <NavItems 
                                         mobile 
                                         onItemClick={(href) => handleNavigation(href, true)}
-                                        pathname={pathname}
                                     />
                                 </div>
 
