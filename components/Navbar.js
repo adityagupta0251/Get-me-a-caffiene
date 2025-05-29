@@ -2,13 +2,14 @@
 
 import React, { useState, useRef, useEffect } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import Image from "next/image";
 import { SignInButton, SignedIn, SignedOut, UserButton, useUser } from "@clerk/nextjs";
 import NavItems from "@/components/NavItems";
 
 const Navbar = () => {
     const pathname = usePathname();
+    const router = useRouter();
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const mobileMenuRef = useRef(null);
     const { user, isLoaded, isSignedIn } = useUser();
@@ -29,6 +30,20 @@ const Navbar = () => {
     useEffect(() => {
         setMobileMenuOpen(false);
     }, [pathname]);
+
+    // Handle navigation with consistent behavior
+    const handleNavigation = (href, closeMenu = true) => {
+        if (closeMenu) {
+            setMobileMenuOpen(false);
+        }
+        // Use router.push for programmatic navigation to ensure consistency
+        router.push(href);
+    };
+
+    // Handle sign in with menu closure
+    const handleSignIn = () => {
+        setMobileMenuOpen(false);
+    };
 
     return (
         <>
@@ -134,9 +149,13 @@ const Navbar = () => {
                     <div className="md:hidden mt-3 animate-in slide-in-from-top-2 duration-300">
                         <div className="bg-white/95 backdrop-blur-md border border-blue-200/50 rounded-3xl shadow-2xl shadow-blue-500/10 overflow-hidden">
                             <div className="p-4">
-                                {/* Mobile Navigation */}
+                                {/* Mobile Navigation - Pass handleNavigation for consistent routing */}
                                 <div className="mb-4">
-                                    <NavItems mobile onItemClick={() => setMobileMenuOpen(false)} />
+                                    <NavItems 
+                                        mobile 
+                                        onItemClick={(href) => handleNavigation(href, true)}
+                                        pathname={pathname}
+                                    />
                                 </div>
 
                                 {/* Mobile Auth Section */}
@@ -169,20 +188,26 @@ const Navbar = () => {
                                                     </p>
                                                 </div>
                                             </div>
-                                            <Link 
-                                                href="/profile"
-                                                onClick={() => setMobileMenuOpen(false)}
+                                            
+                                            {/* Profile Button with consistent navigation */}
+                                            <button
+                                                onClick={() => handleNavigation('/profile', true)}
                                                 className="w-full flex items-center justify-center px-4 py-3 text-blue-600 hover:text-blue-700 hover:bg-blue-50 rounded-2xl transition-all duration-200 font-medium"
                                             >
                                                 View Profile
-                                            </Link>
+                                            </button>
+                                            
+                                            {/* UserButton with enhanced mobile styling */}
                                             <div className="flex items-center justify-center py-2">
                                                 <UserButton 
                                                     afterSignOutUrl="/"
                                                     appearance={{
                                                         elements: {
                                                             rootBox: "w-full h-full",
-                                                            avatarBox: "w-10 h-10 rounded-full border-2 border-white"
+                                                            avatarBox: "w-10 h-10 rounded-full border-2 border-white",
+                                                            userButtonPopoverCard: "shadow-2xl border border-blue-100 rounded-2xl",
+                                                            userButtonPopoverActionButton: "hover:bg-blue-50 rounded-xl",
+                                                            userButtonPopoverActionButtonText: "text-sm"
                                                         }
                                                     }}
                                                     userProfileMode="navigation"
@@ -195,7 +220,7 @@ const Navbar = () => {
                                         <div className="space-y-3">
                                             <SignInButton mode="modal">
                                                 <button 
-                                                    onClick={() => setMobileMenuOpen(false)}
+                                                    onClick={handleSignIn}
                                                     className="w-full px-4 py-3 text-slate-600 hover:text-blue-600 hover:bg-blue-50 rounded-2xl transition-all duration-200 font-medium"
                                                 >
                                                     Sign In
@@ -203,7 +228,7 @@ const Navbar = () => {
                                             </SignInButton>
                                             <SignInButton mode="modal">
                                                 <button 
-                                                    onClick={() => setMobileMenuOpen(false)}
+                                                    onClick={handleSignIn}
                                                     className="w-full px-4 py-3 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-medium rounded-2xl shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105"
                                                 >
                                                     Get Started Free
@@ -250,6 +275,19 @@ const Navbar = () => {
 
                 .animate-in {
                     animation: slide-in-from-top-2 0.2s ease-out;
+                }
+
+                /* Ensure mobile menu appears above all content */
+                .md\\:hidden {
+                    position: relative;
+                    z-index: 1000;
+                }
+
+                /* Prevent scroll issues on mobile when menu is open */
+                @media (max-width: 768px) {
+                    body.menu-open {
+                        overflow: hidden;
+                    }
                 }
             `}</style>
         </>
