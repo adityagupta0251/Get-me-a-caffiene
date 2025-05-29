@@ -11,7 +11,7 @@ const Page = async () => {
   const recentSessionsCompanions = (await getRecentSessions(10)) || [];
 
   return (
-    <main>
+    <main className="mt-20">
       <h1>Popular Companions</h1>
 
       <section className="home-section">
